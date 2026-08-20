@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>iPhone 18 Pro – Alles, was wir wissen</title>
+
+  <style>
+    :root {
+      --background: #f5f5f7;
+      --surface: rgba(255,255,255,.78);
+      --surface-solid: #ffffff;
+      --text: #1d1d1f;
+      --secondary: #6e6e73;
+      --border: rgba(0,0,0,.08);
+      --accent: #0071e3;
+      --warning: #ff9f0a;
+      --radius: 24px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #000000;
+        --surface: rgba(28,28,30,.82);
+        --surface-solid: #1c1c1e;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --border: rgba(255,255,255,.1);
+        --accent: #2997ff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    .hero {
+      padding: 90px 20px 70px;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(0,113,227,.18),
+          transparent 48%
+        );
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: rgba(0,113,227,.1);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(52px, 10vw, 100px);
+      line-height: .95;
+      letter-spacing: -.065em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 25px auto 0;
+      color: var(--secondary);
+      font-size: 20px;
+    }
+
+    .container {
+      width: min(950px, calc(100% - 32px));
+      margin: auto;
+      padding-bottom: 80px;
+    }
+
+    section {
+      margin-top: 55px;
+    }
+
+    .card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -.035em;
+    }
+
+    h3 {
+      margin-top: 32px;
+      font-size: 23px;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+    .muted {
+      color: var(--secondary);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,113,227,.1);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(127,127,127,.08);
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 22px;
+    }
+
+    .stat span {
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin: 25px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--warning);
+      border-radius: 12px;
+      background: rgba(255,159,10,.08);
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .image-note {
+      margin: 18px 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(127,127,127,.07);
+      color: var(--secondary);
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 7px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--background);
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 60px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      h2 {
+        font-size: 29px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="eyebrow">
+    Apple · Gerüchte & Leaks
+  </div>
+
+  <h1>iPhone 18 Pro</h1>
+
+  <p>
+    Alles, was über Apples nächste Generation der Pro-iPhones bekannt ist.
+  </p>
+
+  <p class="muted">
+    Von den MacRumors-Mitarbeitern · 18. August 2026
+  </p>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- AT A GLANCE -->
+
+<section class="card">
+
+  <span class="badge">AUF EINEN BLICK</span>
+
+  <h2>iPhone 18 Pro</h2>
+
+  <p>
+    Das iPhone 18 Pro und iPhone 18 Pro Max sind Apples nächste
+    iPhone-Generation und erscheinen im September 2026.
+  </p>
+
+  <h3>Auf einen Blick</h3>
+
+  <p>
+    Das iPhone 18 Pro, iPhone 18 Pro Max und das iPhone Fold erscheinen
+    im September 2026. Das iPhone 18 soll im Frühjahr 2027 auf den Markt
+    kommen.
+  </p>
+
+  <h3>Vermutete Funktionen</h3>
+
+  <div class="grid">
+
+    <div class="stat">
+      <strong>A20</strong>
+      <span>2-nm-Chip</span>
+    </div>
+
+    <div class="stat">
+      <strong>Akku</strong>
+      <span>Längere Akkulaufzeit</span>
+    </div>
+
+    <div class="stat">
+      <strong>Deep Red</strong>
+      <span>Neue dunkelrote Farbe</span>
+    </div>
+
+    <div class="stat">
+      <strong>Dynamic Island</strong>
+      <span>Kleiner</span>
+    </div>
+
+    <div class="stat">
+      <strong>Kamera</strong>
+      <span>Variable Blende</span>
+    </div>
+
+    <div class="stat">
+      <strong>C2</strong>
+      <span>Neues Modem</span>
+    </div>
+
+  </div>
+
+  <p class="muted">
+    Roundup zuletzt aktualisiert: vor 2 Tagen
+  </p>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section>
+
+  <h2>Das iPhone 18 Pro und iPhone 18 Pro Max</h2>
+
+  <p>
+    Da das iPhone 18 erst für Frühjahr 2027 geplant ist, wird Apples
+    iPhone-Launch im Herbst 2026 das 6,3-Zoll-iPhone 18 Pro,
+    das 6,9-Zoll-iPhone 18 Pro Max und das neue faltbare iPhone umfassen,
+    das im geschlossenen Zustand ungefähr 5,5 Zoll und geöffnet etwa
+    7,8 Zoll groß sein wird.
+  </p>
+
+  <p>
+    Apples High-End-iPhone Fold wird 2026 vermutlich den größten
+    Teil der Aufmerksamkeit erhalten. Für die iPhone-18-Pro-Modelle
+    sind jedoch einige nützliche Verbesserungen geplant, darunter
+    Apples erster 2-Nanometer-Chip mit Verbesserungen bei Leistung
+    und Effizienz.
+  </p>
+
+  <p>
+    Beim Design wird es nicht viele Änderungen geben. Die Dynamic Island
+    könnte jedoch kleiner werden, die Akkulaufzeit könnte länger ausfallen
+    und die rückseitige Kamera könnte ein großes Upgrade erhalten.
+  </p>
+
+</section>
+
+
+<!-- SPLIT LAUNCH -->
+
+<section>
+
+  <h2>Eine aufgeteilte Veröffentlichungsstrategie</h2>
+
+  <p>
+    Mit der iPhone-18-Reihe wird Apple den Zeitpunkt für neue
+    iPhone-Veröffentlichungen ändern.
+  </p>
+
+  <p>
+    Die teureren Modelle iPhone 18 Pro und iPhone 18 Pro Max werden
+    im Herbst 2026 wie gewohnt zusammen mit dem neuen faltbaren iPhone
+    erscheinen.
+  </p>
+
+  <p>
+    Das günstigere iPhone 18 und iPhone 18e werden dagegen erst im
+    Frühjahr 2027 auf den Markt kommen.
+  </p>
+
+  <p>
+    Kunden, die im normalen Herbst-Zeitraum auf ein neues iPhone
+    umsteigen möchten, müssen sich für eines der teureren iPhone-Modelle
+    entscheiden. Wer ein günstigeres Modell möchte, muss warten.
+  </p>
+
+</section>
+
+
+<!-- DESIGN -->
+
+<section>
+
+  <h2>Design</h2>
+
+  <p>
+    Die iPhone-18-Pro-Modelle werden voraussichtlich dasselbe
+    grundlegende Design wie die iPhone-17-Pro-Modelle besitzen.
+    Sie werden weiterhin ein Kamerasystem mit drei Objektiven und
+    einem großen Kameraplateau bieten.
+  </p>
+
+  <p>
+    Gerüchten zufolge könnte der Ceramic-Shield-Bereich für das
+    MagSafe-Laden „leicht transparent“ sein. Es ist jedoch nicht klar,
+    was genau damit gemeint ist.
+  </p>
+
+  <p>
+    Das iPhone 18 Pro könnte laut einigen Gerüchten deutlich dicker
+    und schwerer als das iPhone 17 Pro sein.
+  </p>
+
+  <p>
+    Das Gerät soll angeblich ungefähr 9 mm dick sein und etwa 240 Gramm
+    wiegen. Damit wäre es 0,25 mm dicker als das iPhone 17 Pro und
+    ungefähr sieben Gramm schwerer.
+  </p>
+
+  <p>
+    Die zusätzliche Dicke könnte auf die größere Batterie und ein neues
+    Vapor-Chamber-Kühlsystem zurückzuführen sein.
+  </p>
+
+  <p>
+    Ein anderes Gerücht spricht von einer geringeren Zunahme der Dicke:
+    8,8 mm statt 8,75 mm. Wenn die Größe nur um 0,05 mm zunimmt,
+    wäre der Unterschied für die meisten Nutzer nicht wahrnehmbar.
+  </p>
+
+  <p>
+    Das rückseitige Kameraplateau könnte ebenfalls etwa 2 mm dicker
+    werden, um ein neues Kamerasystem unterzubringen.
+  </p>
+
+  <p>
+    Die iPhone-18-Pro-Modelle könnten außerdem nicht mehr das zweifarbige
+    Erscheinungsbild der iPhone-17-Pro-Modelle besitzen.
+  </p>
+
+  <p>
+    Apple soll das Rückglas angepasst haben, um den Farbunterschied
+    zwischen dem Glas und dem Aluminiumrahmen zu minimieren und dadurch
+    ein einheitlicheres Erscheinungsbild zu schaffen.
+  </p>
+
+  <p>
+    Das iPhone 18 Pro wird ein eloxiertes Aluminium-Finish besitzen,
+    genau wie das iPhone 17 Pro, obwohl es Beschwerden über dessen
+    Haltbarkeit gegeben hat.
+  </p>
+
+</section>
+
+
+<!-- COLORS -->
+
+<section>
+
+  <h2>Farben</h2>
+
+  <p>
+    Mehrere Gerüchte haben darauf hingedeutet, dass Apple ein
+    dunkelrotes Finish für die iPhone-18-Pro-Modelle testet.
+    Diese Farbe soll voraussichtlich die besondere Farbe sein,
+    die Apple 2026 auswählt.
+  </p>
+
+  <p>
+    Laut Macworld könnte der Rotton eher ein dunkles Kirschrot mit
+    einem leichten Violettstich sein als ein besonders dunkler Rotton.
+  </p>
+
+  <p>
+    Die Website geht davon aus, dass Apple die Farbe Dark Cherry
+    zusammen mit Hellblau, Dunkelgrau und Silber anbieten könnte.
+  </p>
+
+  <div class="image-note">
+    Bild: iPhone-18-Pro-Farben – Bild von Macworld
+  </div>
+
+  <p>
+    Dies sollen die konkreten Pantone-Codes der Farben sein,
+    die Apple testet:
+  </p>
+
+  <div class="grid">
+
+    <div class="stat">
+      <strong>Hellblau</strong>
+      <span>Pantone 2121</span>
+      <p class="muted">
+        Ähnelt dem aktuellen Mist Blue des iPhone 17
+      </p>
+    </div>
+
+    <div class="stat">
+      <strong>Dark Cherry</strong>
+      <span>Pantone 6076</span>
+      <p class="muted">
+        Die neue auffällige Farbe
+      </p>
+    </div>
+
+    <div class="stat">
+      <strong>Dunkelgrau</strong>
+      <span>Pantone 426C</span>
+    </div>
+
+    <div class="stat">
+      <strong>Silber</strong>
+      <span>Pantone 427C</span>
+      <p class="muted">
+        Ähnlich der aktuellen Generation
+      </p>
+    </div>
+
+  </div>
+
+  <p>
+    Dieselben vier Farben wurden auch bei den ersten geleakten
+    Dummy-Modellen des iPhone 18 Pro entdeckt. Sie bieten einen
+    weiteren Blick auf die Farbtöne, die Apple wahrscheinlich
+    verwenden wird.
+  </p>
+
+  <div class="image-note">
+    Bild: iPhone-18-Pro-Farb-Dummies
+  </div>
+
+</section>
+
+
+<!-- SIZING -->
+
+<section>
+
+  <h2>Größe</h2>
+
+  <p>
+    Apple wird die Größen der iPhone-18-Pro-Modelle voraussichtlich
+    nicht verändern. Sie werden dieselben Displaygrößen von
+    6,3 Zoll und 6,9 Zoll wie die aktuellen Modelle besitzen.
+  </p>
+
+</section>
+
+
+<!-- LEAKED IMAGES -->
+
+<section>
+
+  <h2>Geleakte Bilder</h2>
+
+  <p>
+    Ein Bild eines angeblichen iPhone-18-Prototyps zeigt eine kleinere
+    Dynamic Island. Außerdem scheint ein Face-ID-Sensor unter dem
+    Display sichtbar zu sein.
+  </p>
+
+  <p>
+    Face-ID-Komponenten unter dem Display würden eine verkleinerte
+    Dynamic Island ermöglichen.
+  </p>
+
+  <div class="image-note">
+    Bild: Geleakter iPhone-18-Prototyp mit Dynamic Island
+  </div>
+
+</section>
+
+
+<!-- DUMMY MODELS -->
+
+<section>
+
+  <h2>Dummy-Modelle</h2>
+
+  <p>
+    iPhone-18-Pro-Dummy-Modelle, die angeblich das Design des
+    iPhone 18 Pro und iPhone 18 Pro Max zeigen, deuten darauf hin,
+    dass das größere Gerät ein dickeres Kameraplateau besitzen wird.
+  </p>
+
+  <p>
+    Das iPhone 18 Pro Max könnte ein 11,54 mm dickes Kameraplateau
+    besitzen, gegenüber 11,23 mm beim Vorgänger.
+  </p>
+
+  <p>
+    Dadurch könnte der gesamte Bereich der Kameralinsen 13,77 mm
+    dick sein, gegenüber 12,92 mm zuvor.
+  </p>
+
+  <div class="image-note">
+    Bild: Vergleich der Dummy-Modelle von iPhone 18 Pro und iPhone 17 Pro
+  </div>
+
+  <p>
+    iPhone-17-Pro-Dummy (links) gegenüber iPhone 18 Pro
+    (Bild: Vadim Yuryev)
+  </p>
+
+  <p>
+    Abgesehen von der Dicke des Kameraplateaus werden das iPhone 18 Pro
+    und iPhone 18 Pro Max dem iPhone 17 Pro und iPhone 17 Pro Max
+    ähnlich sehen.
+  </p>
+
+</section>
+
+
+<!-- DISPLAY -->
+
+<section>
+
+  <h2>Display</h2>
+
+  <h3>Kein Face ID unter dem Display</h3>
+
+  <p>
+    Während einige Gerüchte behaupteten, dass die iPhone-18-Pro-Modelle
+    Face ID unter dem Display erhalten würden und sich die
+    TrueDepth-Kamerahardware unter dem Display befinden würde,
+    deuten neuere Informationen darauf hin, dass diese Technologie
+    noch nicht bereit ist.
+  </p>
+
+
+  <h3>Gerüchte über die Dynamic Island</h3>
+
+  <p>
+    Obwohl Face ID nicht unter dem Display kommen soll, plant Apple
+    laut den Gerüchten, die Größe der Dynamic Island beim iPhone 18 Pro
+    zu reduzieren, sodass sie weniger Platz einnimmt.
+  </p>
+
+  <div class="image-note">
+    Bild: iPhone 18 Pro mit kleinerer Dynamic Island –
+    Konzept-Rendering von Filip Vabroušek
+  </div>
+
+  <p>
+    Der Leaker Ice Universe hat ein Mockup der angeblichen Größe der
+    Dynamic Island des iPhone 18 Pro veröffentlicht.
+  </p>
+
+  <p>
+    Er behauptet, dass die Dynamic Island 35 Prozent schmaler als
+    die Dynamic Island des iPhone 17 sein wird und dass ein Widget
+    ungefähr 13,5 mm groß sein wird, gegenüber 20,7 mm.
+  </p>
+
+  <div class="image-note">
+    Bild: iPhone 18 Pro Dynamic Island – Ice Universe
+  </div>
+
+  <p>
+    iPhone 18 Pro mit kleinerer Dynamic Island
+    (Mockup über Ice Universe)
+  </p>
+
+  <p>
+    Der chinesische Leaker Digital Chat Station behauptet dagegen,
+    dass das iPhone 18 Pro überhaupt keine kleinere Dynamic Island
+    erhalten wird. Die verkleinerte Dynamic Island soll stattdessen
+    auf das iPhone 19 verschoben worden sein.
+  </p>
+
+  <p>
+    Im Mai tauchten CAD-Renderings des angeblichen iPhone 18 Pro auf,
+    die eine schlankere Dynamic Island zeigen.
+  </p>
+
+  <p>
+    CAD-Renderings basieren normalerweise auf technischen Zeichnungen,
+    die aus Produktionsstätten stammen.
+  </p>
+
+  <div class="image-note">
+    Bild: CAD-Rendering des iPhone 18 Pro
+  </div>
+
+</section>

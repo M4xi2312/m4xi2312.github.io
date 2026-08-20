@@ -1,31 +1,289 @@
 :root {
-    --bs-body-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color-scheme: light dark;
+
+    --bs-body-font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --site-bg: #f5f7fb;
+    --site-surface: rgba(255, 255, 255, 0.78);
+    --site-surface-solid: #ffffff;
+    --site-border: rgba(15, 23, 42, 0.08);
+    --site-text-muted: #64748b;
+    --site-primary: #635bff;
+    --site-primary-hover: #5148e8;
+    --site-radius: 1.25rem;
+    --site-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+    --site-shadow-hover: 0 20px 50px rgba(15, 23, 42, 0.13);
+}
+
+[data-bs-theme="dark"] {
+    --site-bg: #080b12;
+    --site-surface: rgba(18, 23, 34, 0.78);
+    --site-surface-solid: #121722;
+    --site-border: rgba(255, 255, 255, 0.08);
+    --site-text-muted: #94a3b8;
+    --site-primary: #8178ff;
+    --site-primary-hover: #958dff;
+    --site-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    --site-shadow-hover: 0 20px 55px rgba(0, 0, 0, 0.4);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            color-mix(in srgb, var(--site-primary) 10%, transparent),
+            transparent 32rem
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            color-mix(in srgb, var(--site-primary) 7%, transparent),
+            transparent 28rem
+        ),
+        var(--site-bg);
+    color: var(--bs-body-color);
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    min-height: 72px;
+    background: color-mix(
+        in srgb,
+        var(--site-surface-solid) 75%,
+        transparent
+    );
+    border-bottom: 1px solid var(--site-border) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar-brand {
+    font-size: 1.15rem;
+    font-weight: 750;
+    letter-spacing: -0.03em;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--site-border);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.65rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem color-mix(
+        in srgb,
+        var(--site-primary) 20%,
+        transparent
+    );
+}
+
+.nav-link {
+    position: relative;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.55rem 0.8rem !important;
+    color: var(--bs-body-color);
+    border-radius: 0.7rem;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-link:hover {
+    background: color-mix(
+        in srgb,
+        var(--site-primary) 9%,
+        transparent
+    );
+    color: var(--site-primary);
+}
+
+main .container {
+    position: relative;
+}
+
+main section:first-child {
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+}
+
+main section:first-child h1 {
+    font-size: clamp(2.7rem, 7vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+main section:first-child .lead {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--site-text-muted) !important;
+}
+
+.badge {
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 }
 
 .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    background: var(--site-surface);
+    border: 1px solid var(--site-border) !important;
+    border-radius: var(--site-radius);
+    box-shadow: var(--site-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--site-primary) 7%, transparent),
+        transparent 45%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--bs-box-shadow) !important;
+    transform: translateY(-7px);
+    border-color: color-mix(
+        in srgb,
+        var(--site-primary) 25%,
+        var(--site-border)
+    ) !important;
+    box-shadow: var(--site-shadow-hover) !important;
 }
 
-a {
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.card h2 {
+    letter-spacing: -0.025em;
+}
+
+.card p {
+    color: var(--site-text-muted) !important;
+}
+
+.bg-body-secondary {
+    background-color: color-mix(
+        in srgb,
+        var(--bs-body-color) 7%,
+        transparent
+    ) !important;
+}
+
+.btn {
+    border-radius: 0.8rem;
+    font-weight: 600;
+    padding: 0.65rem 1rem;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--site-primary);
+    border-color: var(--site-primary);
+    box-shadow: 0 7px 20px color-mix(
+        in srgb,
+        var(--site-primary) 22%,
+        transparent
+    );
+}
+
+.btn-primary:hover {
+    background: var(--site-primary-hover);
+    border-color: var(--site-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px color-mix(
+        in srgb,
+        var(--site-primary) 30%,
+        transparent
+    );
+}
+
+footer {
+    margin-top: 4rem;
+    background: color-mix(
+        in srgb,
+        var(--site-surface-solid) 70%,
+        transparent
+    );
+    border-top: 1px solid var(--site-border) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+footer a {
+    color: var(--site-text-muted) !important;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--bs-body-color) !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding-top: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        margin: 0.15rem 0;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     .card,
-    a {
+    .btn,
+    .nav-link,
+    footer a {
         transition: none;
     }
 
-    .card:hover {
+    .card:hover,
+    .btn-primary:hover {
         transform: none;
     }
 }

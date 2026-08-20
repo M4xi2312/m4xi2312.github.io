@@ -1,14 +1,22 @@
-async function includeHTML() {
-    const elements = document.querySelectorAll("[data-include]");
-    for (const el of elements) {
-        const file = el.getAttribute("data-include");
-        try {
-            const response = await fetch(file);
-            if (!response.ok) throw new Error("Datei nicht gefunden: " + file);
-            el.innerHTML = await response.text();
-        } catch (error) {
-            console.error(error);
+async function loadComponent(id, path) {
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    try {
+        const response = await fetch(path);
+
+        if (!response.ok) {
+            throw new Error(`Failed to load component: ${path}`);
         }
+
+        element.innerHTML = await response.text();
+    } catch (error) {
+        console.error(error);
     }
 }
-includeHTML();
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadComponent("header", "/components/header.html");
+    loadComponent("footer", "/components/footer.html");
+});

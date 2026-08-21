@@ -342,13 +342,38 @@ p {
     padding: clamp(80px, 12vw, 150px) 0 90px;
 
     text-align: center;
+}
+
+.hero::after,
+.page-header::after,
+.error-page::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 
     background-image:
         radial-gradient(var(--border) 1px, transparent 1px);
+
     background-size: 26px 26px;
     background-position: center top;
-    -webkit-mask-image: linear-gradient(to bottom, black, transparent 92%);
-    mask-image: linear-gradient(to bottom, black, transparent 92%);
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 55%,
+        transparent 92%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 55%,
+        transparent 92%
+    );
+
+    pointer-events: none;
 }
 
 .hero::before,

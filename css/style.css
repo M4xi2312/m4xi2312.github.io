@@ -236,7 +236,7 @@ p {
 .navbar-brand .cursor {
     display: inline-block;
     width: 8px;
-    height: 0.8em;
+    height: 1em;
     margin-left: 3px;
 
     background: var(--accent);

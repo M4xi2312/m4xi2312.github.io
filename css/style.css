@@ -241,7 +241,7 @@ p {
 
     background: var(--accent);
 
-    vertical-align: -0.5em;
+    vertical-align: -1em;
     
     animation: blink 1.1s step-end infinite;
 }

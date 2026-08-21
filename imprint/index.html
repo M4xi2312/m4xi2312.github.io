@@ -6,11 +6,43 @@
 
     <meta name="description" content="Legal notice of Maximanu.DE.">
 
+    <link rel="canonical" href="https://maximanu.de/imprint/">
+
+    <meta name="robots" content="noindex">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Maximanu.DE">
+    <meta property="og:title" content="Legal Notice - Maximanu.DE">
+    <meta property="og:description" content="Legal notice of Maximanu.DE.">
+    <meta property="og:url" content="https://maximanu.de/imprint/">
+
+    <meta name="theme-color" content="#e2540b">
+
     <title>Legal Notice - Maximanu.DE</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="mask-icon" href="/favicon.svg" color="#e2540b">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    >
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var theme = stored === "light" || stored === "dark"
+                ? stored
+                : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-bs-theme", theme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -20,7 +52,6 @@
         <section class="page-header">
             <div class="container">
                 <div class="hero-badge">
-                    <i class="bi bi-info-circle"></i>
                     Legal
                 </div>
 

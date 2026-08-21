@@ -242,7 +242,7 @@ p {
     background: var(--accent);
 
     position: relative;
-    top: 3px;
+    top: 2px;
     
     animation: blink 1.1s step-end infinite;
 }

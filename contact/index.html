@@ -6,11 +6,45 @@
 
     <meta name="description" content="Get in touch with Maximanu.DE.">
 
+    <link rel="canonical" href="https://maximanu.de/contact/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Maximanu.DE">
+    <meta property="og:title" content="Contact - Maximanu.DE">
+    <meta property="og:description" content="Get in touch with Maximanu.DE.">
+    <meta property="og:url" content="https://maximanu.de/contact/">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact - Maximanu.DE">
+    <meta name="twitter:description" content="Get in touch with Maximanu.DE.">
+
+    <meta name="theme-color" content="#e2540b">
+
     <title>Contact - Maximanu.DE</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="mask-icon" href="/favicon.svg" color="#e2540b">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    >
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var theme = stored === "light" || stored === "dark"
+                ? stored
+                : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-bs-theme", theme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -20,7 +54,6 @@
         <section class="page-header">
             <div class="container">
                 <div class="hero-badge">
-                    <i class="bi bi-chat-dots"></i>
                     Contact
                 </div>
 
@@ -51,7 +84,7 @@
 
                         <div class="contact-card">
                             <div class="d-flex gap-3 align-items-start">
-                                <div class="feature-icon flex-shrink-0">
+                                <div class="feature-icon flex-shrink-0 mb-0">
                                     <i class="bi bi-envelope"></i>
                                 </div>
 
@@ -59,8 +92,29 @@
                                     <h3 class="h6 fw-bold">Email</h3>
 
                                     <p class="text-body-secondary mb-0">
-                                        Replace this with your public
-                                        contact address.
+                                        <a href="mailto:solunamcde@gmail.com">
+                                            solunamcde@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="d-flex gap-3 align-items-start">
+                                <div class="feature-icon flex-shrink-0 mb-0">
+                                    <i class="bi bi-github"></i>
+                                </div>
+
+                                <div>
+                                    <h3 class="h6 fw-bold">GitHub</h3>
+
+                                    <p class="text-body-secondary mb-0">
+                                        <a href="https://github.com/M4xi2312"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            github.com/M4xi2312
+                                        </a>
                                     </p>
                                 </div>
                             </div>

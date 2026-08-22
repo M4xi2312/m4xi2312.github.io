@@ -212,6 +212,12 @@ p {
         border-color var(--transition);
 }
 
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 15px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     :root:not([data-bs-theme="light"]) .navbar {
         background: rgba(10, 12, 17, 0.78) !important;

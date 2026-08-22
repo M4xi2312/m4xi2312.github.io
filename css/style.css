@@ -214,16 +214,6 @@ p {
     .navbar-top {
         min-height: 66px;
     }
-
-    .navbar-collapse {
-        width: 100%;
-        flex-basis: 100%;
-    }
-
-    .navbar-collapse.show {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
 }
 
 @media (min-width: 992px) {

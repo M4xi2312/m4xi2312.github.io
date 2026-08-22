@@ -203,17 +203,39 @@ p {
 }
 
 .navbar-top {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     width: 100%;
-
     min-height: 72px;
+}
 
+.navbar-collapse {
+    width: 100%;
+    flex-basis: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-top {
+        min-height: 66px;
+    }
+
+    .navbar-collapse {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-top {
+        width: auto;
+    }
+
+    .navbar-collapse {
+        width: auto;
+        flex-basis: auto;
+        margin-left: auto;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

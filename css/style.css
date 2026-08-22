@@ -188,7 +188,17 @@ p {
     top: 0;
     z-index: 1000;
 
-    min-height: 72px;
+    /*
+       padding, not min-height: Bootstrap's .navbar is align-items:center
+       around its single .container child. A min-height taller than the
+       collapsed content gives align-items:center slack to center the
+       container in; opening the mobile menu grows the container past
+       that min-height, the slack disappears, and the centered content
+       snaps to the top — a visible jump. Sizing the bar from padding
+       alone means its height always equals the container's height, so
+       there is never slack to redistribute in either state.
+    */
+    padding-block: 15px !important;
 
     border-bottom: 1px solid var(--border) !important;
 
@@ -200,32 +210,6 @@ p {
     transition:
         background var(--transition),
         border-color var(--transition);
-}
-
-.navbar-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 72px;
-}
-
-@media (max-width: 991.98px) {
-    .navbar-top {
-        min-height: 66px;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar-top {
-        width: auto;
-    }
-
-    .navbar-collapse {
-        width: auto;
-        flex-basis: auto;
-        margin-left: auto;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -267,9 +251,6 @@ p {
 
     background: var(--accent);
 
-    position: relative;
-    top: 2px;
-    
     animation: blink 1.1s step-end infinite;
 }
 
@@ -371,38 +352,13 @@ p {
     padding: clamp(80px, 12vw, 150px) 0 90px;
 
     text-align: center;
-}
-
-.hero::after,
-.page-header::after,
-.error-page::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-    z-index: -1;
 
     background-image:
         radial-gradient(var(--border) 1px, transparent 1px);
-
     background-size: 26px 26px;
     background-position: center top;
-
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        black 55%,
-        transparent 92%
-    );
-
-    mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        black 55%,
-        transparent 92%
-    );
-
-    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent 92%);
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
 }
 
 .hero::before,
@@ -1154,7 +1110,7 @@ footer a:hover {
     }
 
     .navbar {
-        min-height: 66px;
+        padding-block: 12px !important;
     }
 
     .hero,

@@ -198,7 +198,7 @@ p {
        alone means its height always equals the container's height, so
        there is never slack to redistribute in either state.
     */
-    padding-block: 20px !important;
+    padding-block: 15px !important;
 
     border-bottom: 1px solid var(--border) !important;
 

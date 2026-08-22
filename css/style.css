@@ -202,6 +202,20 @@ p {
         border-color var(--transition);
 }
 
+.navbar-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 72px;
+
+}
+
 @media (prefers-color-scheme: dark) {
     :root:not([data-bs-theme="light"]) .navbar {
         background: rgba(10, 12, 17, 0.78) !important;
